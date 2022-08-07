@@ -3,6 +3,7 @@ package testcases;
 import org.testng.Assert;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+import pojos.PetPojo;
 
 import static io.restassured.RestAssured.given;
 
@@ -11,18 +12,33 @@ public class PetStoreAPI_PetTest extends BaseTest{
     @Test(dataProvider = "PetStore-data-provider")
     public void findPetsByAnyStatus(String status){
 
+        Boolean exists = false;
 
         response = given()
                         .pathParam("status",status)
                     .when()
                             .get("/pet/findByStatus?status={status}")
                     .then()
-                        .statusCode(200)
+                        //.statusCode(200)
                     .extract().response();
 
-//        jsonData = response.getBody().jsonPath();
-//
-//        PetPojo[] petPojos = jsonData.getObject("",PetPojo[].class);
+        jsonData = response.getBody().jsonPath();
+
+        PetPojo[] petPojos = jsonData.getObject("",PetPojo[].class);
+
+        for(PetPojo pp : petPojos){
+
+            if(pp.getPetStatus().equalsIgnoreCase(status)){
+                exists = true;
+            }
+
+            else{
+                exists = false;
+                break;
+            }
+        }
+
+        System.out.println("------------> "+exists);
 //
 //        for(int i=0; i < petPojos.length; i++){
 //

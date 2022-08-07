@@ -12,33 +12,33 @@
             </class>
         </classes>
     </test>
-    <test name="TC002 - Try to search pets using an invalid status">
-        <parameter name="invalidStatus" value="pendin"/>
-        <classes>
-            <class name="testcases.PetStoreAPI_PetTest">
-                <methods>
-                    <include name="tryToSearchPetByInvalidStatus"/>
-                </methods>
-            </class>
-        </classes>
-    </test>
-    <test name="TC003 - Add new pet to the store">
-        <classes>
-            <class name="testcases.PetStoreAPI_PetTest">
-                <methods>
-                    <include name="addNewPetToStore"/>
-                </methods>
-            </class>
-        </classes>
-    </test>
-    <test name="TC004 - Delete pet from store using pet id">
-        <parameter name="petId" value="11"/>
-        <classes>
-            <class name="testcases.PetStoreAPI_PetTest">
-                <methods>
-                    <include name="deletePetFromStore"/>
-                </methods>
-            </class>
-        </classes>
-    </test>
+<!--    <test name="TC002 - Try to search pets using an invalid status">-->
+<!--        <parameter name="invalidStatus" value="pendin"/>-->
+<!--        <classes>-->
+<!--            <class name="testcases.PetStoreAPI_PetTest">-->
+<!--                <methods>-->
+<!--                    <include name="tryToSearchPetByInvalidStatus"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="TC003 - Add new pet to the store">-->
+<!--        <classes>-->
+<!--            <class name="testcases.PetStoreAPI_PetTest">-->
+<!--                <methods>-->
+<!--                    <include name="addNewPetToStore"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="TC004 - Delete pet from store using pet id">-->
+<!--        <parameter name="petId" value="11"/>-->
+<!--        <classes>-->
+<!--            <class name="testcases.PetStoreAPI_PetTest">-->
+<!--                <methods>-->
+<!--                    <include name="deletePetFromStore"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
 </suite>
